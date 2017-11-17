@@ -123,14 +123,18 @@ public class MainActivity extends AppCompatActivity {
             teams = data.readTeams();
             finished = data.getDone();
         }
-        int numTeams = teams.size()/numScouts;
-        int location = 0;
-        int extra = teams.size()%numScouts; //Left over teams
+        System.err.println("teams size: " + teams.size());
+        int numTeams = teams.size()/numScouts; //How many teams each scout gets
+        int location = 0; //Current team on in list
+        int extra = teams.size()%numScouts; //Left over teams if it doesn't divide equally
         for( int i = 0; i < numScouts; i++ ) { //Split the teams into textviews depending on the number of scouts
             TextView textView = (TextView) findViewById(i);
             String content = "";
             if (extra != 0){ //Teams don't divide equally among scouts
                 for (; (location - i*(numTeams+1)) < (numTeams + 1); location++){ //Adding teams
+                    if (location > teams.size()){
+                        break;
+                    }
                     if (!finishedTeams(location)){
                         if (!content.equals("")){ //Adding tabs in front if not first team in textView
                             content+="\t";
@@ -161,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(content);
         }
     }
-
 
     public boolean finishedTeams(int location){
         for (int k = 0; k < finished.size(); k++){ //Check if team has been done
