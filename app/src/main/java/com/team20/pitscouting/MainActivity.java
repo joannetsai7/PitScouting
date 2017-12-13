@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static Data data = new Data();
     private static ArrayList<String> teams = new ArrayList<String>(); //List of teams
     private static ArrayList<String> finished = new ArrayList<String>(); //List of teams scouted
-    private int numScouts = 6;
+    private int numScouts = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,44 +121,33 @@ public class MainActivity extends AppCompatActivity {
             teams = data.readTeams();
             finished = data.getDone();
         }
-        System.err.println("teams size: " + teams.size());
-        int numTeams = teams.size()/numScouts; //How many teams each scout gets
+        int numTeams;
         int location = 0; //Current team on in list
         int extra = teams.size()%numScouts; //Left over teams if it doesn't divide equally
-        for( int i = 0; i < numScouts; i++ ) { //Split the teams into textviews depending on the number of scouts
-            TextView textView = (TextView) findViewById(i);
+        for(int i = 0; i < numScouts; i++ ) { //Split the teams into text views
+            TextView textView = (TextView) findViewById(i); //Text view of corresponding scout the teams are being assigned to
             String content = "";
-            if (extra != 0){ //Teams don't divide equally among scouts
-                for (; (location - i*(numTeams+1)) < (numTeams + 1); location++){ //Adding teams
-                    if (location > teams.size()){
-                        break;
-                    }
-                    if (!finishedTeams(location)){
-                        if (!content.equals("")){ //Adding tabs in front if not first team in textView
-                            content+="\t";
-                            if (teams.get(location-1).length() < 4){
-                                content+="\t";
-                                if (teams.get(location-1).length() < 3){
-                                    content+="\t";
-                                }
-                            }
-                        }
-                        content += teams.get(location);
-                    }
-                }
+            int scoutTeam = 0; //number of teams assigned to scout
+            if (extra != 0){
                 extra--;
+                numTeams = teams.size()/numScouts + 1;
             } else {
-                for (; (location - (teams.size()%numScouts)*(numTeams+1) - (i - teams.size()%numScouts)*numTeams) < numTeams; location++){ //Adding teams
-                    if (!finishedTeams(location)) {
-                        if (!content.toString().equals("")) { //Add tab in front if not first team in textView
-                            content += "\t";
-                            if (teams.get(location - 1).length() < 4) {
-                                content += "\t";
+                numTeams = teams.size()/numScouts;
+            }
+            for (; scoutTeam < numTeams; location++){ //Adding teams
+                if (!finishedTeams(location)){ //If team wasn't already scouted
+                    if (!content.equals("")){ //Adding tabs in front if not first team in textView
+                        content+="\t";
+                        if (teams.get(location-1).length() < 4){
+                            content+="\t";
+                            if (teams.get(location-1).length() < 3){
+                                content+="\t";
                             }
                         }
-                        content += teams.get(location);
                     }
+                    content += teams.get(location);
                 }
+                scoutTeam++;
             }
             textView.setText(content);
         }

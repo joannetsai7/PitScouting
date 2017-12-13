@@ -138,23 +138,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_weight="1"
                 android:weightSum="1">
 
                 <!--Teams at competition-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Teams Attending: "
+                    android:text="Teams to Scout: "
                     android:textSize= "25dp" />
 
                 <!--Align the team numbers text fields that will be added via code-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.9"
                     android:orientation="vertical"
                     android:id="@+id/add">
-
                 </LinearLayout>
 
                 <!--Keeps the button on the bottom-->
@@ -170,7 +169,6 @@
                     android:text="Next"
                     android:id="@+id/nextButton"
                     android:layout_gravity="bottom|right"
-                    android:layout_weight="0.1"
                     android:onClick="next"/>
 
             </LinearLayout>
