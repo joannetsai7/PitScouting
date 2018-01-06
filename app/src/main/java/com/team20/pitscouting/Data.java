@@ -28,7 +28,6 @@ public class Data{
     private String fullBackup = "FULL_BACKUP_DATA.txt";
     private String teams = "TEAMS.txt";
     private File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "Scouting/");
-//    private File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/");
 
     public Data (){
         if(!dir.exists()){
