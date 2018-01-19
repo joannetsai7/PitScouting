@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
         </ExpandableListView>
-
+77
         <!--Dimensions of Robot-->
         <Space
             android:layout_width="match_parent"
@@ -369,13 +369,6 @@
                     android:text="3"
                     android:textSize="18dp"
                     android:id="@+id/auto3"
-                    android:checked="false"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:textSize="18dp"
-                    android:id="@+id/auto4"
                     android:checked="false"/>
 
                 <!--Auto Ability-->

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--DO NOT EDIT-->
 <!--THIS STAYS THE SAME EVERY YEAR-->
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="First Name: "
-                        android:textSize= "20dp"
+                        android:textSize="20dp"
                         android:id="@+id/firstName"
                         android:layout_weight="0.25" />
 
@@ -63,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Last Name: "
-                        android:textSize= "20dp"
+                        android:textSize="20dp"
                         android:id="@+id/lastName"
                         android:layout_weight="0.25" />
 
@@ -72,7 +72,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Team Scouted: "
-                        android:textSize= "20dp"
+                        android:textSize="20dp"
                         android:id="@+id/team"
                         android:layout_weight="0.25" />
 
@@ -98,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/editFirstName"
                         android:hint="@string/first_name"
-                        android:textSize= "20dp"
+                        android:textSize="20dp"
                         android:inputType="text"
                         android:singleLine="true"
                         android:layout_weight="0.03" />
@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/editLastName"
                         android:hint="@string/last_name"
-                        android:textSize= "20dp"
+                        android:textSize="20dp"
                         android:inputType="text"
                         android:singleLine="true"
                         android:layout_weight="0.03" />
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/editTeam"
                         android:hint="Enter team scouted number"
-                        android:textSize= "20dp"
+                        android:textSize="20dp"
                         android:inputType="number"
                         android:singleLine="true"
                         android:layout_weight="0.03" />
@@ -148,15 +148,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Teams to Scout: "
-                    android:textSize= "25dp" />
+                    android:textSize="25dp" />
 
                 <!--Align the team numbers text fields that will be added via code-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/add">
-                </LinearLayout>
+                    android:id="@+id/add"></LinearLayout>
 
                 <!--Keeps the button on the bottom-->
                 <View
@@ -171,7 +170,7 @@
                     android:text="Next"
                     android:id="@+id/nextButton"
                     android:layout_gravity="bottom|right"
-                    android:onClick="next"/>
+                    android:onClick="next" />
 
             </LinearLayout>
         </LinearLayout>
