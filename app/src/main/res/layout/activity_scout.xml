@@ -16,14 +16,22 @@
         android:orientation="vertical"
         android:weightSum="1">
 
-        <!--Drive Train and Wheel Type-->
+        <!--(I, II, and III)Drive Train and Wheel Type-->
         <ExpandableListView
             android:id="@+id/lvExp"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
         </ExpandableListView>
 
-        <!--Weight and Dimensions-->
+        <!--(VI, VII)Auto-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto: "
+            android:textSize="24dp"
+            android:id="@+id/auto" />
+        
+        <!--(IV and V)Weight and Dimensions-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -67,6 +75,83 @@
                     android:id="@+id/height"/>
             </LinearLayout>
 
+            <!--(VI)Auto Ability-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto Ability (Put other autos in comments): "
+                android:textSize="20dp"
+                android:id="@+id/autoAbility" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NO Auto"
+                android:textSize="18dp"
+                android:id="@+id/noAuto"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Base Line ONLY"
+                android:textSize="18dp"
+                android:id="@+id/baseLine"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Base Line + Score Switch"
+                android:textSize="18dp"
+                android:id="@+id/autoScoreSwitch"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Base Line + Score Scale"
+                android:textSize="18dp"
+                android:id="@+id/autoScoreScale"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Base Line + Score Scale and Switch"
+                android:textSize="18dp"
+                android:id="@+id/autoScoreScaleSwitch"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Base Line + Score Scale Twice"
+                android:textSize="18dp"
+                android:id="@+id/autoScoreScale2x"
+                android:checked="false"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Break Base Line + Score Switch Twice"
+                android:textSize="18dp"
+                android:id="@+id/autoScoreSwitch2x"
+                android:checked="false"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30px" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unreliable"
+                android:checked="false"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/field"
+            android:src="@drawable/field"
+            android:layout_weight=".5"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30px"
+            android:layout_weight="0.05" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,7 +174,43 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!--Power Cube Collection-->
+    <!--(VII)Auto Preferences-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preferred Auto Positions: "
+        android:textSize="20dp"
+        android:id="@+id/autoPosition" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="18dp"
+        android:id="@+id/auto1"
+        android:checked="false"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="18dp"
+        android:id="@+id/auto2"
+        android:checked="false"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="18dp"
+        android:id="@+id/auto3"
+        android:checked="false"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textSize="18dp"
+        android:id="@+id/auto4"
+        android:checked="false"/>
+
+        <!--(VIII)Power Cube Collection-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -118,7 +239,29 @@
             android:id="@+id/PyramidCollect"
             android:checked="false"/>
 
-        <!--Scoring Power Cube-->
+    <!--(IX)Power Cube Orientation-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Power Cube Orientation: "
+        android:textSize="20dp"
+        android:id="@+id/orientCube" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upward"
+        android:textSize="18dp"
+        android:id="@+id/orientUpward"
+        android:checked="false"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sideways"
+        android:textSize="18dp"
+        android:id="@+id/orientSideways"
+        android:checked="false"/>
+
+        <!--(X)Scoring Power Cube-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -140,7 +283,7 @@
             android:id="@+id/scoreScale"
             android:checked="false"/>
 
-        <!--Climbing Ability-->
+        <!--(XI)Climbing Ability-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -175,104 +318,6 @@
             android:textSize="18dp"
             android:id="@+id/climbLift"
             android:checked="false"/>
-
-        <!--Auto-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Auto: "
-            android:textSize="24dp"
-            android:id="@+id/auto" />
-        <!--Auto Preferences-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Preferred Auto Positions: "
-            android:textSize="20dp"
-            android:id="@+id/autoPosition" />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="18dp"
-            android:id="@+id/auto1"
-            android:checked="false"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:textSize="18dp"
-            android:id="@+id/auto2"
-            android:checked="false"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3"
-            android:textSize="18dp"
-            android:id="@+id/auto3"
-            android:checked="false"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4"
-            android:textSize="18dp"
-            android:id="@+id/auto4"
-            android:checked="false"/>
-        <!--Auto Ability-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Auto Ability (Put other autos in comments): "
-            android:textSize="20dp"
-            android:id="@+id/autoAbility" />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NO Auto"
-            android:textSize="18dp"
-            android:id="@+id/noAuto"
-            android:checked="false"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Break Base Line ONLY"
-            android:textSize="18dp"
-            android:id="@+id/baseLine"
-            android:checked="false"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Break Base Line + Score Switch"
-            android:textSize="18dp"
-            android:id="@+id/autoScoreSwitch"
-            android:checked="false"/>
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Break Base Line + Score Scale"
-            android:textSize="18dp"
-            android:id="@+id/autoScoreScale"
-            android:checked="false"/>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30px" />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/unreliable"
-            android:checked="false"/>
-    </LinearLayout>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/field"
-        android:src="@drawable/field"
-        android:layout_weight=".5"/>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30px"
-        android:layout_weight="0.05" />
 
     <!--Comments and Submit-->
     <LinearLayout
